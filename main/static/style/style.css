@@ -1,0 +1,96 @@
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 960px;
+    width: 100%;
+    margin: auto;
+}
+
+.todo__header {
+    padding-top: 32px;
+    margin-bottom: 42px;
+}
+
+.todo__create {
+    display: flex;
+}
+
+.todo__input {
+    line-height: 1.6;
+    vertical-align: top;
+    padding: 2px 0 3px 5px;
+    font-size: 16px;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.todo__add {
+    padding: 7.5px 12px;
+}
+
+.todo__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.todo__item {
+    width: 23.7%;
+    padding: 5px 5px 5px 12px;
+    background-color: #F4B374;
+    margin: 0 6px 12px;
+}
+.todo__item_top {
+    padding-bottom: 12px;
+}
+.todo__item_bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;    
+}
+
+.todo_mark {
+    background-color: #E8E288;
+
+}
+.todo_complete {
+    position: relative;
+    background-color: #545863;
+    opacity: 0.8;
+}
+.todo_complete::before,
+.todo_complete::after {
+    content: ' ';
+    display: block;
+    width: 90%;
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(26deg);
+    z-index: 1;
+}
+.todo_complete::after {
+    transform: translate(-50%, -50%) rotate(-26deg);
+}
+
+.todo__time {
+    flex-grow: 1;
+}
+.todo__icon_favorite,
+.todo__icon_delete {
+    border: none;
+    outline: none;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+
+}
+
+.todo__icon_delete {
+    background: url('../icons/css_sprites.png') 0px 0 no-repeat;
+    background-size: cover;
+}
