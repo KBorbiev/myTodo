@@ -20,19 +20,20 @@
           </div>
           <div class="todo__body">
             <div class="todo__list">
+              {% for todo in todo_list %}
               <div class="todo__item">
                 <div class="todo__item_top">
                   <input type="checkbox" class="todo__check" id="3" />
-                  <label for="3" class="todo__title">Купить молок</label>
+                  <label for="3" class="todo__title">{{todo.text}}</label>
                 </div>
                 <div class="todo__item_bottom">
-                  <span class="todo__time js-todo-time">12.12.20</span>
+                  <span class="todo__time js-todo-time">{{todo.created_at}}</span>
                   <input type="checkbox" id="f3" />
                   <label for="f3" class="todo__icon_favorite js-todo-favorite"></label>
-                  {{todo_list}}
                   <button class="todo__icon_delete js-todo-delete"></button>
                 </div>
               </div>
+              {% endfor %}
             </div>
           </div>
         </div>
