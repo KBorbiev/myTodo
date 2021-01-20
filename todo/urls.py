@@ -24,5 +24,6 @@ urlpatterns = [
     path('', homepage, name='home'),
     path('test/', test, name='test'),
     path('test3/', third, name='third'),
+    path('book/', book, name='book'),
 ] + static(settings.STATIC_URL, documet_root=settings.STATIC_ROOT)\
   + static(settings.MEDIA_URL, documet_root=settings.MEDIA_ROOT)
