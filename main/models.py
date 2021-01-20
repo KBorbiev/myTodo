@@ -1,5 +1,4 @@
 from django.db import models
-from django import forms
 
 class ToDo(models.Model):
     text = models.CharField(max_length=100)
@@ -14,5 +13,5 @@ class Book(models.Model):
     price = models.IntegerField()
     genre = models.CharField(max_length=50)
     author = models.CharField(max_length=50)
-    year = models.DateField(auto_now_add=True)
-    date = forms.DateTimeField(input_formats=['%d/%m/%Y'], widget=forms.DateTimeInput(format='%d/%m/%Y'))
+    year = models.DateTimeField()
+    date = models.DateField(auto_now_add=True)
