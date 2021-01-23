@@ -13,8 +13,11 @@ def third(request):
     return render(request, 'third.html')
 
 def book(request):
+    return render(request, 'book.html')
+
+def get_books(request):
     book_list = Book.objects.all()
-    return render(request, 'book.html', {"book_list":book_list})
+    return render(request, 'books.html', {"book_list":book_list})
 
 def add_todo(request):
     form = request.POST

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Books</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h4>Книги</h4>
+        <hr>
+        <br>
+        <div class="row">
+            {% for book in book_list %}
+            <div class="col s4 m6">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{book.title}}</span>
+                        <p>{{book.description}}</p>
+                        <br>
+                        <p>Жанр: {{book.genre}}</p>
+                        <p>Автор: {{book.author}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Купить за {{book.price}} сом</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
