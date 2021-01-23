@@ -4,13 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Book</title>
 </head>
 <body>
-    {% for book in book_list %}
-    <p>{{ book.title }}</p>
-    <p>{{ book.price }}</p>    
-    <p>{{ book.author }}</p>    
-    {% endfor %}
+    <div class="wrapper">
+        <h4>Добавить книгу</h4>
+        <hr>
+        <br>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Заголовок" name="title" type="text">
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Подзаголовок" name="subtitle" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="textarea1" name="descrition" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Описание</label>
+                    </div>
+                    <div class="input-field col s2">
+                        <input placeholder="Цена" name="price"  type="number" class="validate">
+                    </div>
+                    <div class="input-field col s3">
+                        <input placeholder="Жанр" name="genre"  type="text" class="validate">
+                    </div>
+                    <div class="input-field col s4">
+                        <input placeholder="Автор" name="author"  type="text" class="validate">
+                    </div>
+                    <div class="input-field col s3">
+                        <input type="text" placeholder="Год выхода книги" name="yaer" class="datepicker">
+                    </div>
+                </div>
+            </form>
+          </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.datepicker');
+            var instances = M.Datepicker.init(elems);
+        });
+    </script>
 </body>
 </html>
