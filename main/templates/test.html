@@ -14,8 +14,12 @@
         <div class="todo">
           <div class="todo__header">
             <div class="todo__create">
-              <input type="text" class="todo__input js-todo-value" />
-              <button class="todo__add js-todo-add">Добавить</button>
+              <form action="{% url 'add-todo' %}" method="POST">
+              {% csrf_token %}
+
+                <input type="text" name="todo_text" class="todo__input js-todo-value" />
+                <button class="todo__add js-todo-add">Добавить</button>
+              </form>
             </div>
           </div>
           <div class="todo__body">

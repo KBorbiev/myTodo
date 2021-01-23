@@ -25,5 +25,6 @@ urlpatterns = [
     path('test/', test, name='test'),
     path('test3/', third, name='third'),
     path('book/', book, name='book'),
+    path("add-todo/", add_todo, name='add-todo'),
 ] + static(settings.STATIC_URL, documet_root=settings.STATIC_ROOT)\
   + static(settings.MEDIA_URL, documet_root=settings.MEDIA_ROOT)
