@@ -66,6 +66,8 @@ def book_remove(request, id):
     book.delete()
     return redirect(get_books)
 
-
+def books_detail(request, id):
+    item = Book.objects.get(id=id)
+    return render(request, 'books_detail.html', {"book":item})
 
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{% static 'style/style.css' %}" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>Books</title>
+    <title>Book</title>
 </head>
 <body>
     <div class="wrapper">
@@ -15,28 +15,24 @@
         <hr>
         <br>
         <div class="row">
-            {% for book in book_list %}
-            <div class="col s4 m6">
+            <div class="col s12">
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
                         <span class="card-title">{{book.title}}</span>
-                        <p>{{book.description}}</p>
-                        <br>
+                        <p>{{book.subtitle}}</p>
+                        <hr>
+                        <p>Описание: {{book.subtitle}}</p>
+                        <hr>
                         <p>Жанр: {{book.genre}}</p>
                         <p>Автор: {{book.author}}</p>
-                    </div>
-                    <div class="card-action d-flex">
-                        <a href="{% url 'books_detail' book.id %}" class="book-price" >Купить за {{book.price}} сом</a>
-                        {% if book.is_favorites %}
-                        <a href="{% url 'book-unfavorite' book.id %}" class="fav-img fav-true"></a>
-                        {% else %}
-                        <a href="{% url 'book-favorite' book.id %}" class="fav-img fav-false"></a>
-                        {% endif %}
-                        <a href="{% url 'book-remove' book.id %}" class="fav-img todo-remove"></a>
+                        <p>Год издание: {{book.year}}</p>
+                        <br>
+                        <hr>
+                        <br>
+                        <p>Цена:{{book.price}}</p>
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

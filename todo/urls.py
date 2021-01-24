@@ -34,6 +34,8 @@ urlpatterns = [
     path('book-favorite/<id>/', book_favorite, name='book-favorite'),
     path('book-unfavorite/<id>/', book_unfavorite, name='book-unfavorite'),
     path('book-remove/<id>/', book_remove, name='book-remove'),
+    path('books_detail/<id>', books_detail, name='books_detail'),
+
 
 ] + static(settings.STATIC_URL, documet_root=settings.STATIC_ROOT)\
   + static(settings.MEDIA_URL, documet_root=settings.MEDIA_ROOT)
