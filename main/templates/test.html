@@ -16,7 +16,6 @@
             <div class="todo__create">
               <form action="{% url 'add-todo' %}" method="POST">
               {% csrf_token %}
-
                 <input type="text" name="todo_text" class="todo__input js-todo-value" />
                 <button class="todo__add js-todo-add">Добавить</button>
               </form>
@@ -25,16 +24,22 @@
           <div class="todo__body">
             <div class="todo__list">
               {% for todo in todo_list %}
-              <div class="todo__item">
+			  <div class="todo__item 
+			  {% if todo.is_favorite  %} todo_mark {% endif %}
+			  {% if todo.is_closed  %} todo_complete {% endif %}
+			  ">
                 <div class="todo__item_top">
-                  <input type="checkbox" class="todo__check" id="3" />
-                  <label for="3" class="todo__title">{{todo.text}}</label>
+					<input type="checkbox" class="todo__check" id="{{todo.id}}" />
+					<label for="{{todo.id}}" class="todo__title">{{todo.text}}</label>
                 </div>
                 <div class="todo__item_bottom">
-                  <span class="todo__time js-todo-time">{{todo.created_at}}</span>
-                  <input type="checkbox" id="f3" />
-                  <label for="f3" class="todo__icon_favorite js-todo-favorite"></label>
-                  <button class="todo__icon_delete js-todo-delete"></button>
+					<span class="todo__time js-todo-time">{{todo.created_at}}</span>
+					{% if todo.is_favorite  %}
+					<a href="{% url 'unfavorite-todo' todo.id %}" class="fav-img fav-true"></a>
+					{% else %}
+					<a href="{% url 'favorite-todo' todo.id %}" class="fav-img fav-false"></a>
+					{% endif %}
+					<a href="{% url 'delete-todo' todo.id %}" class="fav-img todo-remove"></a>
                 </div>
               </div>
               {% endfor %}
@@ -43,5 +48,15 @@
         </div>
       </div>
     </section>
+    <script>
+		const d = document.querySelectorAll('.todo__item')
+		const s = document.querySelectorAll('.js-todo-favorite')
+		for (let i = 0; i < s.length; i++) {
+			s[i].addEventListener("click", kkk)
+		}
+		function kkk(data) {
+			console.log(data);
+		}
+    </script>
   </body>
 </html>

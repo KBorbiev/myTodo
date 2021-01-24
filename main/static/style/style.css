@@ -47,8 +47,7 @@
 }
 .todo__item_bottom {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;    
+    justify-content: space-between;
 }
 
 .todo_mark {
@@ -78,19 +77,24 @@
 }
 
 .todo__time {
+    align-self: center;
     flex-grow: 1;
 }
-.todo__icon_favorite,
-.todo__icon_delete {
-    border: none;
-    outline: none;
+
+.fav-img {
     width: 34px;
     height: 34px;
-    cursor: pointer;
-
+    background-color: red;
 }
-
-.todo__icon_delete {
+.todo-remove {
     background: url('../icons/css_sprites.png') 0px 0 no-repeat;
+    background-size: cover;
+}
+.fav-true {
+    background: url(../icons/css_sprites.png) -34px 0 no-repeat;
+    background-size: cover;
+}
+.fav-false {
+    background: url(../icons/css_sprites.png) -68px 0 no-repeat;
     background-size: cover;
 }

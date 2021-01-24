@@ -39,20 +39,3 @@ label {
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
-
-.todo__icon_favorite:after {
-    content: '';
-    display: block;
-    background: url(../icons/css_sprites.png) -68px 0 no-repeat;
-    background-size: cover;
-    width: 34px;
-    height: 34px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-input:checked + .todo__icon_favorite:after {
-    background: url(../icons/css_sprites.png) -34px 0 no-repeat;
-    background-size: cover;
-}
