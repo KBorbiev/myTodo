@@ -30,5 +30,10 @@ urlpatterns = [
     path('delete-todo/<id>/', delete_todo, name='delete-todo'),
     path('favorite-todo/<id>/', favorite_todo, name='favorite-todo'),
     path('unfavorite-todo/<id>/', unfavorite_todo, name='unfavorite-todo'),
+    path('todo-complete/<id>/', todo_complete, name='todo-complete'),
+    path('book-favorite/<id>/', book_favorite, name='book-favorite'),
+    path('book-unfavorite/<id>/', book_unfavorite, name='book-unfavorite'),
+    path('book-remove/<id>/', book_remove, name='book-remove'),
+
 ] + static(settings.STATIC_URL, documet_root=settings.STATIC_ROOT)\
   + static(settings.MEDIA_URL, documet_root=settings.MEDIA_ROOT)

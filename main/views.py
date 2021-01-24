@@ -42,3 +42,30 @@ def unfavorite_todo(request, id):
     todo.is_favorite = False
     todo.save()
     return redirect(test)
+
+def todo_complete(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_closed = True
+    todo.save()
+    return redirect(test)
+
+def book_favorite(request, id):
+    book = Book.objects.get(id=id)
+    book.is_favorites = True
+    book.save()
+    return redirect(get_books)
+
+def book_unfavorite(request, id):
+    book = Book.objects.get(id=id)
+    book.is_favorites = False
+    book.save()
+    return redirect(get_books)
+
+def book_remove(request, id):
+    book = Book.objects.get(id=id)
+    book.delete()
+    return redirect(get_books)
+
+
+
+

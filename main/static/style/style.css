@@ -98,3 +98,11 @@
     background: url(../icons/css_sprites.png) -68px 0 no-repeat;
     background-size: cover;
 }
+.card-action.d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.book-price {
+    flex-grow: 1;
+}

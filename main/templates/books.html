@@ -25,8 +25,14 @@
                         <p>Жанр: {{book.genre}}</p>
                         <p>Автор: {{book.author}}</p>
                     </div>
-                    <div class="card-action">
-                        <a href="#">Купить за {{book.price}} сом</a>
+                    <div class="card-action d-flex">
+                        <a href="#" class="book-price" >Купить за {{book.price}} сом</a>
+                        {% if book.is_favorites %}
+                        <a href="{% url 'book-unfavorite' book.id %}" class="fav-img fav-true"></a>
+                        {% else %}
+                        <a href="{% url 'book-favorite' book.id %}" class="fav-img fav-false"></a>
+                        {% endif %}
+                        <a href="{% url 'book-remove' book.id %}" class="fav-img todo-remove"></a>
                     </div>
                 </div>
             </div>
