@@ -45,7 +45,7 @@ def unfavorite_todo(request, id):
 
 def todo_complete(request, id):
     todo = ToDo.objects.get(id=id)
-    todo.is_closed = True
+    todo.is_closed = not todo.is_closed 
     todo.save()
     return redirect(test)
 
