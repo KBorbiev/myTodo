@@ -9,9 +9,6 @@ def test(request):
     todo_list = ToDo.objects.all()
     return render(request, 'test.html', {"todo_list":todo_list})
 
-def third(request):
-    return render(request, 'third.html')
-
 def book(request):
     return render(request, 'book.html')
 
@@ -69,5 +66,4 @@ def book_remove(request, id):
 def books_detail(request, id):
     item = Book.objects.get(id=id)
     return render(request, 'books_detail.html', {"book":item})
-
-
+    
